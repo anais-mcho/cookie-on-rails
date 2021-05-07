@@ -1,0 +1,14 @@
+<h1>Ajouter votre recette 🍳</h1>
+<%= form_for @todo do |f| %>
+
+  <%= label_tag(:title, "Nom:") %>
+  <%= f.text_field :title %></br>
+
+  <%= label_tag(:description, "Ingrédients") %> 
+  <%= f.text_area :description %></br>
+
+  <%= label_tag(:steps, "Étapes") %> 
+  <%= f.text_area :steps %></br>
+
+  <%= f.submit "Enregistrer" %>
+<% end %>

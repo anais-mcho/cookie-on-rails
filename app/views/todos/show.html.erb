@@ -1,0 +1,6 @@
+<h1>Votre recette 🍽️</h1>
+<p>Nom : <%= @todo['title']%></p>
+<p>Ingrédients : <%= @todo['description']%></p>
+<p>Étapes : <%= @todo['steps']%></p>
+
+<%= link_to "Retour à la liste des recettes",todos_path%>

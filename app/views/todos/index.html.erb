@@ -1,0 +1,47 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://www.thespruceeats.com/thmb/KEDGBRpq8IgngLj-3wtFWejhang=/3000x2000/filters:no_upscale():max_bytes(150000):strip_icc()/essential-baking-tools-explained-digital-scale-4172314-824603faa2ec45a7ad7c541f2eca5136.jpg" class="d-block w-100" alt="baking">
+    </div>
+    <div class="carousel-item">
+      <img src="http://dslv9ilpbe7p1.cloudfront.net/tVDR9sBMte3KfKHdxgLm4Q_store_banner_image.jpeg" class="d-block w-100" alt="cooking">
+    </div>
+    <div class="carousel-item">
+      <img src="https://static.youmiam.com/images/recipe/1500x1000/smoothies-d-ete--abricot-nectarine---banane-fruits-rouges--1320358?placeholder=web_recipe&sig=ff83d481ebd812d9cd845e792b192635161f6127&v3" class="d-block w-100" alt="smoothie">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<br><h1 class="text-center">👩‍🍳 Toutes vos recettes ! 👨‍🍳</h1><br>
+
+<%= link_to "Ajouter une nouvelle recette", new_todo_path, class: 'btn btn-outline-success' %><br><br>
+
+<div class="row">
+<% @todos.each do |todo| %>
+  <div class="col-sm-6 mb-3">
+    <div class="card">
+
+      <div class="card-body">
+        <h5 class="card-title d-flex justify-content-center"><%= link_to todo.title, todo_path(todo.id) %></h5><br>
+        <a class="btn btn-outline-primary d-flex justify-content-center mb-2" <%= link_to "modifier", edit_todo_path(todo[:id]) %> </a>
+        <a class="btn btn-outline-danger d-flex justify-content-center" <%= link_to "effacer", todo, method: :delete, data: { confirm: "Souhaitez-vous vraiment effacer cette délicieuse recette ?" }%> </a>
+      </div>    
+
+    </div>
+  </div>
+  <% end %>
+</div>
+
