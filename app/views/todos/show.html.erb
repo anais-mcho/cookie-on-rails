@@ -1,6 +1,11 @@
-<h1>Votre recette 🍽️</h1>
-<p>Nom : <%= @todo['title']%></p>
-<p>Ingrédients : <%= @todo['description']%></p>
-<p>Étapes : <%= @todo['steps']%></p>
+<h1 class="text-center">Votre recette 🍽️</h1><br>
 
-<%= link_to "Retour à la liste des recettes",todos_path%>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item"><p>Nom : <%= @todo['title']%></p></li>
+  <li class="list-group-item"><p>Ingrédients : <%= @todo['description']%></p></li>
+
+  <li class="list-group-item"><p>Étapes : <%= @todo['steps']%></p></li>
+  
+</ul>
+
+<br><%= link_to "Retour à la liste des recettes",todos_path, class:"btn btn-dark"%> <br>

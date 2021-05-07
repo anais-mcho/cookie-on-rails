@@ -1,14 +1,19 @@
-<h1>Modifier votre recette 🥣</h1>
-<%= form_for @todo do |f| %>
+<h1 class="text-center">Modifier votre recette 🥣</h1> <br>
 
-  <%= label_tag(:title, "Nom :") %>
-  <%= f.text_field :title %><br>
-
-  <%= label_tag(:description, "Ingrédients") %>
-  <%= f.text_area :description %><br>
-
-  <%= label_tag(:steps, "Étapes") %>
-  <%= f.text_area :steps %><br>
-
-  <%= f.submit "Enregistrer" %>
-<% end %>
+<div class="mx-auto" style="width: 40%;">
+    <%= form_for @todo do |f| %>
+      <div class="mb-3">
+          <label class="form-label">Nom :</label>
+          <%= f.text_field :title, class: "form-control"%>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Ingrédients</label>
+        <%= f.text_area :description, class:"form-control" %>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Étapes :</label>
+        <%= f.text_area :steps, class:"form-control" %>
+      </div>
+        <%= f.submit "Enregistrer", class:"btn btn-dark"%>
+    <% end %>
+</div>
